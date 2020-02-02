@@ -3,21 +3,30 @@ CREATE DATABASE abcCompany_DB;
 
 USE abcCompany_DB;
 
+CREATE TABLE department(
+  department_id INTEGER(20) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  name VARCHAR(45)
+);
+
+CREATE TABLE roles(
+   role_id INTEGER(20) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+   title VARCHAR(30) NOT NULL,
+   salary DECIMAL NULL,
+   department_id INTEGER(20),
+   FOREIGN KEY (department_id) REFERENCES department(department_id)
+);
+
 CREATE TABLE employee(
-  id INT NOT NULL AUTO_INCREMENT,
+  employee_id INTEGER(20) PRIMARY KEY NOT NULL AUTO_INCREMENT,
   first_name VARCHAR(30) NOT NULL,
   last_name VARCHAR(30) NOT NULL,
-  role_id INT default 0,
-  manager_id INT default 0,
-  PRIMARY KEY (id)
+  role_id INTEGER(20),
+  manager_id INTEGER(20),
+  FOREIGN KEY (role_id) REFERENCES roles(role_id)
 );
-
-CREATE TABLE role(
-    title VARCHAR(30),
-    salary DECIMAL,
-    department-id INT,
-);
-
-CREATE TABLE department(
-    name VARCHAR(30)
-)
+USE abccompany_db;
+SELECT * FROM employee;
+USE abccompany_db;
+SELECT * FROM department;
+USE abccompany_db;
+SELECT * FROM roles;
