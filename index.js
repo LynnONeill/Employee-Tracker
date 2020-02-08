@@ -128,11 +128,11 @@ async function addEmployee() {
                         }
                     });
                     console.log(assignedRoleID);
-                    assignedRoleID == assignedRoleID[0].role_id;
+                    assignedRoleID = assignedRoleID[0].role_id;
 
 
                     console.log("This should be the assigned manager's ID: " + assignedManagerID);
-                    console.log(answer.firstName + "this is the first name")
+                    console.log(answer.firstName + answer.lastName + assignedRoleID+ assignedManagerID + "this is the first name")
                     // uses mysql node module to insert new employee information into database ////
                     connection.query(
                         'INSERT INTO employee set ?',
@@ -140,7 +140,7 @@ async function addEmployee() {
                             first_name: answer.firstName,
                             last_name: answer.lastName,
                             role_id: assignedRoleID,
-                            manager_id: managerID
+                            manager_id: assignedManagerID
                         },
                         function (err) {
                             if (err) throw err;
