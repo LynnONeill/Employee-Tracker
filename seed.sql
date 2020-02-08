@@ -15,12 +15,12 @@ INSERT INTO roles (title, salary, department_id) VALUE('Software Engineer', '185
 INSERT INTO roles (title, salary, department_id) VALUE('Loan Specialist', '165000', 2);
 
 INSERT INTO employee (first_name, last_name, role_id) VALUES('Daisy', 'Duck', 1);
-INSERT INTO employee (first_name, last_name, role_id) VALUES('Donald', 'Duck', 3);
+INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES('Donald', 'Duck', 3, 1);
 INSERT INTO employee (first_name, last_name, role_id) VALUES('Captain', 'Hook', 5);
-INSERT INTO employee (first_name, last_name, role_id) VALUES('Cinder', 'Ella', 4);
-INSERT INTO employee (first_name, last_name, role_id) VALUES('Peter', 'Pan', 6);
+INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES('Cinder', 'Ella', 4, 1);
+INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES('Peter', 'Pan', 6, 1);
 INSERT INTO employee (first_name, last_name, role_id) VALUES('Mary', 'Poppins', 2);
-INSERT INTO employee (first_name, last_name, role_id) VALUES('Prince', 'Charming', 3);
+INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES('Prince', 'Charming', 3, 5);
 
 
 
